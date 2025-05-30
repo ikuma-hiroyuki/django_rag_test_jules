@@ -1,0 +1,49 @@
+# Django stuff
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Media files
+media/
+
+# Static files
+staticfiles/
+
+# Env files
+.env
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python virtual environment
+venv/
+env/
+.venv/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Linters
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.htmlcov/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

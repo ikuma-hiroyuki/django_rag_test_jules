@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ view_title }} - RAG System{% endblock %}
+
+{% block content %}
+<h2>{{ view_title }}</h2>
+<a href="{% url 'documents:document_upload' %}" class="btn btn-success mb-3">Upload New Document</a>
+{% if documents %}
+    <ul class="list-group">
+        {% for doc in documents %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>{{ doc.title|default:doc.filename }}</strong><br>
+                    <small class="text-muted">Uploaded: {{ doc.uploaded_at|date:"Y-m-d H:i" }}</small><br>
+                    <small class="text-muted">File: {{ doc.file.name }}</small>
+                </div>
+                <!-- Optional: Add download or delete buttons here later -->
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You haven't uploaded any documents yet.</p>
+{% endif %}
+{% endblock %}
