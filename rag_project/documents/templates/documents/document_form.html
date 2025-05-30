@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %} <!-- We'll need to install crispy-forms and crispy-bootstrap5 -->
+
+{% block title %}{{ view_title }} - RAG System{% endblock %}
+
+{% block content %}
+<h2>{{ view_title }}</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary mt-3">Upload</button>
+</form>
+{% endblock %}
